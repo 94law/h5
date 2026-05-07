@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no, email=no, adress=no">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="94律师咨询">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>94律师咨询</title>
+  <script>
+    (function () {
+      var customViewportCorrectionVariable = 'vh';
+
+      function setViewportProperty(doc) {
+        var prevClientHeight;
+        var customVar = '--' + (customViewportCorrectionVariable || 'vh');
+        function handleResize() {
+          var clientHeight = doc.clientHeight;
+          if (clientHeight === prevClientHeight) return;
+          requestAnimationFrame(function updateViewportHeight() {
+            doc.style.setProperty(customVar, (clientHeight * 0.01) + 'px');
+            prevClientHeight = clientHeight;
+          });
+        }
+        handleResize();
+        return handleResize;
+      }
+      window.addEventListener('resize', setViewportProperty(document.documentElement));
+    })();
+  </script>
+</head>
+
+<body>
+  <noscript>
+    <strong>
+      We're sorry but 94律师咨询 doesn't work properly without JavaScript
+      enabled. Please enable it to continue.
+    </strong>
+  </noscript>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+  <!-- 加密SDK -->
+  <script src="/sdk/ce-cryptojs-1.3.4.js"></script>
+  <% if (env.VITE_APP_RUNTIME_ENV==='testing' ) { %>
+    <script src="/sdk/vconsole-3.13.0.js"></script>
+    <script>
+      var vConsole = new VConsole();
+    </script>
+    <% } %>
+</body>
+
+</html>

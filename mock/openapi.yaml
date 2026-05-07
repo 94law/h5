@@ -1,0 +1,154 @@
+openapi: 3.0.0
+info:
+  title: Mock API
+  version: 1.0.0
+  description: Mock API 接口文档
+
+paths:
+  /api/user/captcha:
+    post:
+      summary: 获取验证码
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - phoneNumber
+              type: object
+              properties:
+                phoneNumber:
+                  type: string
+                  example: '12345678901'
+        required: true
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                required:
+                  - code
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    format: int64
+                    example: 0
+                  msg:
+                    type: string
+                    example: ok
+                  data:
+                    type: object
+                    example: null
+  /api/user/login:
+    post:
+      summary: 登录
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - phoneNumber
+                - captcha
+              type: object
+              properties:
+                phoneNumber:
+                  type: string
+                  example: '12345678901'
+                captcha:
+                  type: string
+                  example: '123456'
+        required: true
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                required:
+                  - code
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    format: int64
+                    example: 0
+                  msg:
+                    type: string
+                    example: ok
+                  data:
+                    type: object
+                    properties:
+                      token:
+                        type: string
+                        example: e82aceb7a991419492c58227d0a03a40
+                      isNewUser:
+                        type: boolean
+                        example: false
+  /api/user/logout:
+    post:
+      summary: 退出
+      parameters:
+        - name: api_key
+          in: header
+          required: true
+          schema:
+            type: string
+          example: 'e82aceb7a991419492c58227d0a03a40'
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                required:
+                  - code
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    format: int64
+                    example: 0
+                  msg:
+                    type: string
+                    example: ok
+                  data:
+                    type: object
+                    example: null
+  /api/user/profile:
+    post:
+      summary: 获取用户信息
+      parameters:
+        - name: api_key
+          in: header
+          required: true
+          schema:
+            type: string
+          example: 'e82aceb7a991419492c58227d0a03a40'
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                required:
+                  - code
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    format: int64
+                    example: 0
+                  msg:
+                    type: string
+                    example: ok
+                  data:
+                    type: object
+                    properties:
+                      uid:
+                        type: integer
+                        format: int64
+                        example: 1234567890
+                      username:
+                        type: string
+                        example: evan

@@ -1,0 +1,47 @@
+body {
+  font-size: 14px;
+  text-size-adjust: 100%;
+  color: #263238;
+}
+
+[v-cloak] {
+  display: none !important;
+}
+
+.button-text {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.clickable:active {
+  background-color: #f2f3f5;
+}
+
+.animation-rotation {
+  animation: rotation 1.5s linear infinite;
+}
+
+.animation-heartBeat {
+  animation: heartBeat 0.7s linear infinite alternate;
+}
+
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

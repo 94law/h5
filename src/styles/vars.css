@@ -1,0 +1,31 @@
+:root {
+  /* 自定义颜色 */
+  --primary-color: #4d69ff;
+  --important-color: #000;
+  --important-title-color: #333;
+  --paragraph-color: #303030;
+  --unimportant-color: #989898;
+  --error-color: #fa2f2d;
+  --border-color: #ebebeb;
+  --sinking-color: #ffc300;
+
+  /* 字重 */
+  --font-weight-thin: 100;
+  --font-weight-extra-light: 200;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  --font-weight-black: 900;
+
+  /* 视窗高度 */
+  --viewport-height: 100vh;
+
+  /** nav-bar height */
+  --nav-bar-height: 70px;
+
+  /* 内容区高度 */
+  --content-height: calc(var(--viewport-height) - var(--nav-bar-height));
+}

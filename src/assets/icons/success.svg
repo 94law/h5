@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="92px" height="98px" viewBox="0 0 92 98" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 2</title>
+    <defs>
+        <linearGradient x1="1.38777878e-14%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#42E199" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#2AFE79" offset="0%"></stop>
+            <stop stop-color="#42E199" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="还款结果" transform="translate(-142, -168)">
+            <g id="编组-2" transform="translate(142, 168)">
+                <ellipse id="椭圆形" fill="url(#linearGradient-1)" opacity="0.400716146" cx="46" cy="89" rx="46" ry="9"></ellipse>
+                <g id="编组">
+                    <circle id="椭圆形" fill="url(#linearGradient-2)" cx="46" cy="46" r="46"></circle>
+                    <polygon id="路径-20" fill="#212121" fill-rule="nonzero" points="66.7282856 26.3440577 75.1223274 34.7380995 41.2609232 68.5995037 37.0639429 64.4285548 21.2635733 48.7261859 29.6314619 40.3060722 41.2344209 51.8361109"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
