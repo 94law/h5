@@ -1,17 +1,10 @@
-FROM node:20-alpine AS build
-WORKDIR /app
-
-COPY package.json package-lock.json ./
-
-# 跳过 preinstall/postinstall 钩子
-RUN npm ci --ignore-scripts
-
-COPY . .
-
-RUN npm run build-only
-
+# 纯运行环境，没有任何打包、安装依赖逻辑
 FROM nginx:stable-alpine
-COPY --from=build /app/dist /usr/share/nginx/html/
+
+# 直接复制你【本地已经打包好的 dist 文件夹】
+COPY dist /usr/share/nginx/html/
+
+# 复制你的 nginx 配置（正确路径，别写错）
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80

@@ -12,6 +12,7 @@
     }
   ],
   "compilerOptions": {
+    "noEmit": false,
     "module": "NodeNext"
   }
 }
